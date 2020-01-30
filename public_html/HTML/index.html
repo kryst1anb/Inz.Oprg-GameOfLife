@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+	<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Gra w życie Krystian Barczak, Krzysztof Dragon, Szymon Babula, Aleksander Boronowski</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="shortcut icon" href="favicon.ico">
+	</head>
+	<body>
+		<script src="../JS/gameoflife.js"></script>
+		<div id="MainMenu">
+			<button class="start" id="startMenu" type="button" onclick="startButton()"> START </button>
+			<button class="instruction" id="instructionMenu" type="button" onclick="instructionButton()"> INSTRUCTION </button>
+			</div>
+
+		<div id="MainGame">
+			<nav role="navigation">
+				<span id="optionsSpan" onclick="loadMenuButton();">Options</span>
+				<div class="ps" style="display: none" id="menuToggle">
+					<button id="loadMenuButton" class="loadMenu" type="button" onclick="loadTable();" style="display: none;">LOAD</button>
+						<select id="pliki" onchange="loadMenuButton();">>
+							<option value=""></option>
+						</select>
+						<button class="saveMenu" type="button" onclick="saveButton(table);loadFiles();">SAVE</button>
+						<button class="quitMenu" type="button" onclick="quitButton();">QUIT</button>
+				</div>
+				<script>$("span").click(function () {$(".ps").toggle("slow");});</script>
+			</nav>
+			<div id="gridContainer"></div>
+				<div id="FooterOptions">
+					<div id="sizeAndSpeed">
+						<div id="sizeOfTable">
+							<span id="Label">Height</span>
+						<input class="slider1" type="range" id="heightY" min="5" onchange="rc()">
+						<span id="valuesY"></span> 
+						<br>
+						<span id="Label">Width</span>
+						<input class="slider2" type="range" id="widthX" min="5" onchange="rc()">
+						<span id="valuesX"></span> 
+						</div>
+						<div id="speedOfLife">
+							<select class="interval" id="interval" name="interval" onchange="rt(this.value)">
+								<option value="100">1/10 sec</option>
+								<option value="250">1/4 sec</option>
+								<option value="500">1/2 sec</option>
+								<option value="1000">1 sec</option>
+								<option value="2000">2 sec</option>
+							</select>
+						</div>
+						
+					</div>
+				<div id="bottomButtons">
+					<button id="oneMove" class="OneMove" value="1" onclick="stepButton(value)">1 Move</button>
+					<button id="fiveMoves" class="FiveMoves" value="5" onclick="stepButton(value)">5 Moves</button>
+					<button id="tenMoves" class="TenMoves" value="10" onclick="stepButton(value)">10 Moves</button>
+					<button id="fiftyMoves" class="FiftyMoves" value="50" onclick="stepButton(value)">50 Moves</button>
+					<div id="eventButtons">
+						<input id="start" type="button" value="START"> 
+						<input id="clear" type="button" value="CLEAR"> 
+						<input id="random" type="button" value="RANDOM"> 
+						
+					</div>
+				</div>
+				<div id="lifeRules">
+					<span id="LabelLifeRules">Life Rules:</span>
+					<select class="rules" id="rules" onchange="changeRules();">
+						<option value="standard">Standard</option>
+						<option value="maze">Maze</option>
+						<option value="highLife">High Life</option>
+						<option value="ameba">Ameba</option>
+						<option value="koral">Koral</option>
+					</select>
+				</div>
+				</div>
+		</div>
+		<div id="MainInstruction" class="MainInstruction">
+			<p>Reguła Standard:</p><p>Martwa komórka, która ma dokładnie 3 żywych sąsiadów, staje się żywa w następnej jednostce czasu (rodzi się). Żywa komórka z 2 albo 3 żywymi sąsiadami pozostaje nadal żywa; przy innej liczbie sąsiadów umiera (z „samotności” albo „zatłoczenia”)</p><hr/>
+			<p>Reguła Maze:</p><p> Martwa komórka, która ma dokładnie 3 żywych sąsiadów, staje się żywa w następnej jednostce czasu (rodzi się). Żywa komórka z 1,2,3,4 lub 5 żywymi sąsiadami pozostaje nadal żywa; przy innej liczbie sąsiadów umiera (z „samotności” albo „zatłoczenia”)</p><hr/>
+			<p>Reguła High Life:</p><p> Martwa komórka, która ma 3 lub 6 żywych sąsiadów, staje się żywa w następnej jednostce czasu (rodzi się). Żywa komórka z 2 albo 3 żywymi sąsiadami pozostaje nadal żywa; przy innej liczbie sąsiadów umiera (z „samotności” albo „zatłoczenia”)</p><hr/>
+			<p>Reguła Ameba:</p><p> Martwa komórka, która ma 3,5 lub 7 żywych sąsiadów, staje się żywa w następnej jednostce czasu (rodzi się). Żywa komórka z 1,3,5 lub 8 żywymi sąsiadami pozostaje nadal żywa; przy innej liczbie sąsiadów umiera (z „samotności” albo „zatłoczenia”)</p><hr/>
+			<p>Reguła Koral:</p><p> Martwa komórka, która ma dokładnie 3 żywych sąsiadów, staje się żywa w następnej jednostce czasu (rodzi się). Żywa komórka z 4,5,6,7 lub 8 żywymi sąsiadami pozostaje nadal żywa; przy innej liczbie sąsiadów umiera (z „samotności” albo „zatłoczenia”)</p>
+		
+		</div>
+	</body>
+</html>

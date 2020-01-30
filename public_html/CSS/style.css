@@ -1,0 +1,376 @@
+body {
+	background-color: #333;
+	padding: 0;
+    margin: 0;
+}
+
+#FooterOptions {
+	position: fixed;
+    height: auto;
+    width: 100%;
+    background: #993300;
+    bottom: 0;
+}
+
+#sizeAndSpeed{
+	text-align: center;
+}
+
+#sizeOfTable{
+	display: inline-block;
+    width: 210px;
+}
+
+#speedOfLife{
+	display: inline-block;
+    width: 125px;
+}
+
+#Label{
+	text-align: right;
+    font-size: 14px;
+    font-family: FreeMono, monospace;
+    width: 52px;
+    display: inline-block;
+}
+
+#LabelRules{
+	text-align: right;
+    font-size: 14px;
+    font-family: FreeMono, monospace;
+    width: 60px;
+    display: inline-block;
+}
+
+#LabelLifeRules{
+	text-align: right;
+    font-size: 14px;
+    font-family: FreeMono, monospace;
+    width: 85px;
+    display: inline-block;
+}
+
+#lifeRules{
+	text-align: center;
+}
+
+.slider1,
+.slider2 {
+    -webkit-appearance: none;
+    background: #d3d3d3;
+    height: 10px;
+}
+
+.slider1:hover,
+.slider2:hover {
+    opacity: 1;
+}
+
+.slider1::-webkit-slider-thumb,
+.slider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 10px;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    cursor: pointer;
+}
+
+.slider1::-moz-range-thumb,
+.slider2::-moz-range-thumb{
+    width: 15px;
+    height: 10px;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    cursor: pointer;
+    content: "";
+}
+
+#FooterOptions button,#FooterOptions select, #FooterOptions #bottomButtons input{
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding: 6px 8px;
+	text-decoration:none;
+	margin: 0 0 3px 0;
+}
+
+#FooterOptions button:hover,#FooterOptions select:hover{
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+#FooterOptions button:active, #FooterOptions  select:active {
+	position:relative;
+	top:1px;
+}
+
+#bottomButtons{
+	text-align: center;
+}
+
+#FooterOptions .interval{
+	position: initial;
+    margin-bottom: 3px;
+    margin-left: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: tomato;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: center;
+}
+
+#menu
+{
+	border-top-right-radius: 40px ;
+	border-bottom-right-radius: 40px ;
+	position: absolute;
+	width: 300px;
+	margin: 0 0 0 0px;
+    padding: 20px;
+	background: #ededed;
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	transform-origin: 0% 0%;
+	transform: translate(-100%, 0);
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#optionsSpan
+{
+	cursor: pointer;
+}
+
+#MainMenu {
+	display: inline;
+}
+
+#MainInstruction{
+	display: none;
+}
+
+#MainInstruction p {
+	margin: 10px 9px 15px 9px;
+}
+
+#MainOptions{
+	display: none;
+}
+
+#MainLoad{
+	display: none;
+}
+
+#MainGame {
+	display: none;
+	color: white;
+}
+
+#MainGame img{
+	float: right;
+	width: 50px;
+}
+
+
+button.start, button.load, button.instruction{
+	width: 100%;
+	box-shadow: rgb(28, 27, 24) 0px 1px 0px 0px; 
+	background: linear-gradient(rgb(234, 224, 194) 5%, rgb(204, 194, 166) 100%) rgb(234, 224, 194); 
+	border-radius: 10px; 
+	border: 1px solid rgb(51, 48, 41); 
+	display: inline-block; 
+	cursor: pointer; 
+	color: rgb(80, 87, 57); 
+	font-family: Arial; 
+	font-size: 15px; 
+	font-weight: bold; 
+	text-decoration: none; 
+}
+
+button.loadMenu, button.saveMenu, button.quitMenu, #menuToggle select{
+	width: 25%;
+	box-shadow: rgb(28, 27, 24) 0px 1px 0px 0px; 
+	background: linear-gradient(rgb(234, 224, 194) 5%, rgb(204, 194, 166) 100%) rgb(234, 224, 194); 
+	border-radius: 10px; 
+	border: 1px solid rgb(51, 48, 41); 
+	display: inline-block; 
+	cursor: pointer; 
+	color: rgb(80, 87, 57); 
+	font-family: Arial; 
+	font-size: 18px; 
+	font-weight: bold; 
+	text-decoration: none; 
+}
+
+input[name="pliki"]{
+	text-align: center;
+	display: inline-block; 
+	color: rgb(80, 87, 57); 
+	font-family: Arial; 
+	font-size: 18px; 
+	font-weight: bold; 
+	text-decoration: none; 
+	background: linear-gradient(rgb(234, 224, 194) 5%, rgb(204, 194, 166) 100%) rgb(234, 224, 194); 
+	border-radius: 10px; 
+	border: 1px solid rgb(51, 48, 41); 
+}
+
+input[type="radio"] {
+    width: 19px;
+    height: 19px;
+    margin: 0 0 0 5px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+
+@media only screen and (max-width: 1920px){
+	input[name="pliki"] {
+		width: 35%;
+	  }
+	button.loadMenu,button.saveMenu,button.quitMenu, #menuToggle select{
+		width: 35%;
+	}
+	.MainInstruction{
+		font-size: 20px;
+	}
+	#startMenu{
+		font-size: 40px;
+	}
+	#instructionMenu{
+		font-size: 40px;
+	}
+}
+
+@media only screen and (max-width: 720px){
+	input[name="pliki"] {
+		width: 65%;
+	  }
+	button.loadMenu,button.saveMenu,button.quitMenu, #menuToggle select{
+		width: 65%;
+	}
+	.MainInstruction{
+		font-size: 15px;
+	}
+	#startMenu{
+		font-size: 30px;
+	}
+	#instructionMenu{
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 320px){
+	input[name="pliki"] {
+		width: 90%;
+	  }
+	button.loadMenu,button.saveMenu,button.quitMenu, #menuToggle select{
+		width: 90%;
+	}
+	.MainInstruction{
+		font-size: 12px;
+	}
+	#startMenu{
+		font-size: 20px;
+	}
+	#instructionMenu{
+		font-size: 20px;
+	}
+}
+
+#menuToggle{
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+#optionsSpan{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 150%;
+letter-spacing: 1px;
+word-spacing: -5px;
+color: #BCBCBC;
+font-weight: bold;
+text-decoration: underline solid #BCBCBC;
+font-style: normal;
+font-variant: small-caps;
+text-transform: uppercase;
+text-shadow: 2px 2px 11px #000000;
+}
+
+#MainInstruction{
+font-family: "Arial Black", Gadget, sans-serif;
+letter-spacing: -0.6px;
+word-spacing: -0.2px;
+color: #CDD1D1;
+font-weight: 700;
+text-align: justify;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+.red {
+	background-color: #993300;
+	width: 15px;
+	height: 15px;
+}
+.green{
+	background-color: #00ff62;
+	width: 15px;
+	height: 15px;
+}
+.yellow{
+	background-color: #fbff00;
+	width: 15px;
+	height: 15px;
+}
+.blue{
+	background-color: #0011ff;
+	width: 15px;
+	height: 15px;
+}
+.cyan{
+	background-color: #00d9ff;
+	width: 15px;
+	height: 15px;
+}
+
+.white {
+	background-color: #ffffff;
+	width: 15px;
+	height: 15px;
+}
+
+.black{
+	background-color: #000000;
+	width: 15px;
+	height: 15px;
+}
+
+.pink{
+	background-color: #ff00dd;
+	width: 15px;
+	height: 15px;
+}
